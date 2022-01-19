@@ -52,6 +52,8 @@ public function getModello()
 }
 public function setModello($modello)
 {
+    if(strlen($modello) < 3 || strlen($modello) > 20  )
+        throw new Exception("modello non valido");
     $this->modello = $modello;
 }
 public function getMarca()
@@ -85,7 +87,7 @@ public function __toString() {
 try {
 $computer1 = new Computer("365915", "500 €");
     
-$computer1 -> setModello("gggfgf");
+$computer1 -> setModello("hgddfx");
 
 $computer1 -> setMarca("asus");
     
