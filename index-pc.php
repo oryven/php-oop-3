@@ -41,6 +41,9 @@ public function getCodice()
 }
 public function setCodice($codiceUnivoco)
 {
+    if(!strlen($codiceUnivoco) = 6 )
+        throw new Exception("codice Univoco non valido");
+        
     $this->codiceUnivoco = $codiceUnivoco;
 }
 public function getModello()
@@ -79,12 +82,16 @@ public function __toString() {
 }
 
 }
-
+try {
 $computer1 = new Computer("365917", "500 €");
     
-        $computer1 -> setModello("gggfgf");
+$computer1 -> setModello("gggfgf");
 
-        $computer1 -> setMarca("asus");
+$computer1 -> setMarca("asus");
     
-        $computer1 -> printMe();
+$computer1 -> printMe();
+}catch (Exception $e) {
+    echo $e . "<br><h1>" . $e -> getMessage() . "</h1>";
+}
+
 ?>
