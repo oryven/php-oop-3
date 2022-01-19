@@ -89,7 +89,7 @@ class User {
 }
 
 try {
-    $u = new User("paolo", "aha5hfd", 35);
+    $u = new User("paolo", "aha5h?fd", 35);
     $u -> printMe();
 } catch (Exception $e) {
     echo $e . "<br><h1>" . $e -> getMessage() . "</h1>";
