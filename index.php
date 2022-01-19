@@ -54,15 +54,16 @@ class User {
     {
         return $this->password;
     }
+
     public function setPassword($password)
     {
-        foreach ($password as $caratteri) {
-        if(ctype_alnum($caratteri))
-            throw new Exception("password non valida");
-        
-        $this->password = $password;
+        if (ctype_alnum($password)) {
+            throw new Exception("password non valida, perché non ha neanche un carattere speciale");
         }
+
+        $this->password = $password;
     }
+
     public function getAge()
     {
         return $this->age;
