@@ -41,9 +41,9 @@ public function getCodice()
 }
 public function setCodice($codiceUnivoco)
 {
-    if(!strlen($codiceUnivoco) = 6 )
+    if(strlen($codiceUnivoco) != 6  )
         throw new Exception("codice Univoco non valido");
-        
+
     $this->codiceUnivoco = $codiceUnivoco;
 }
 public function getModello()
@@ -83,7 +83,7 @@ public function __toString() {
 
 }
 try {
-$computer1 = new Computer("365917", "500 €");
+$computer1 = new Computer("365915", "500 €");
     
 $computer1 -> setModello("gggfgf");
 
