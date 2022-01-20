@@ -70,6 +70,8 @@ public function getPrezzo()
 }
 public function setPrezzo($prezzo)
 {
+    if (!is_int($prezzo) || $prezzo < 0 || $prezzo > 2000)  
+        throw new Exception("Il prezzo deve essere un numero intero compreso tra 0 e 2000");
     $this->prezzo = $prezzo;
 }
 public function printMe() {
